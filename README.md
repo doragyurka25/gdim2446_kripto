@@ -1,0 +1,1 @@
+# gdim2446_kripto
