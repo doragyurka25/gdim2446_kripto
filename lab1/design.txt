@@ -1,14 +1,36 @@
-Name: <YOUR NAME>
-SUNet: <SUNet ID>
+Name: <Gyurka Dora>
+SUNet: <gdim2446>
 
 In 1-3 sentences per section, comment on your approach to each of the parts of the assignment. What was your high-level strategy? How did you translate that into code? Did you make use of any Pythonic practices? We want you to reflect on your coding style, and whether you're making full use of the utilities provides.
 
 
 # Caesar Cipher
+Az enkriptalasnal azt csinaltam hogy kivontam a karakterbol 65-ot hogy az ascii kodjat vigyem vissza 0 es 26 koze, igy konnyebb 260al modolni, ezutan hozaadtam 3-at mivel annyival toljuk el, majd visszaadtam a 26-ot
+Ha nem sima text file-ra irom meg akkor egyszeruen hagyom az ascii kodot ahogy van, hozzaadok 3-at, majd modolom 256-al, mivel annyi karakter lehet osszesen
 
+A dekriptalasnal ugyanezt csinalom csak most nem hozzaadok, hanem kivonok harmat, de a logika ugyanaz
 
 # Vigenere Cipher
+Az enkriptalasnal megtobbszorozom a kulcsoszot, hogy olyan hosszu legyen mint az eredti szoveg, ezutan sorra megyek mindket szovegen
+osszeadom az ascii kodjaikat, modolom 26-al es 65-ot hozzaadok, mivel csak nagy betuk erdekelnek mindket
+
+Dekriptalasnal ugyanez lesz csak kivonom egymasbol az ascii kodokat
 
 
 # Merkle-Hellman Knapsack Cryptosystem
 
+
+#Scytale Cipher
+kiszamoltam hogy hany sorra lesz szuksegunk, majd rajottem arra hogy ha vegigfutok a szovegen, akkor maz i-edik poziciot ha elosztom az atmerovel akkor megkapom a sort es ha modolom akkor megkapom az oszlopot
+ezutan vegigfutok es a nem ures karaktereket kiirom
+
+dekodolasnal az atmero*sorindex+oszlopindex megadja a karakter eredeti helyet a szovegben, ha benne volt a szovegben akkor hozzaadjuk a matrixhoz
+
+
+#Railfence Cipher
+enkriptalasnal megvalositottam a le es felfele menest a matrixban, nezve hogy mikor erek le az aljara, illetve mikor erek vissza a tetejere
+
+
+dekriptalasnal felepitettem egy valamilyen random karakterbol az eredeti kiindulo allapotot
+ezutan a matrix minden soraba berakok egy resz az enkriptalt szovegbol
+a vegen megcsinalom a cikk-cakkos lepeseket es osszerakom a dekriptalt szoveget
