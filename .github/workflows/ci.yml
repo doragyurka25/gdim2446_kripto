@@ -2,9 +2,9 @@ name: CI Cipher Module Tests
 
 on:
   push:
-    branches: ["main", "master", "dev"]
+    branches: ["main", "master", "lab2"]
   pull_request:
-    branches: ["main", "master", "dev"]
+    branches: ["main", "master", "lab2"]
 
 jobs:
   test:
