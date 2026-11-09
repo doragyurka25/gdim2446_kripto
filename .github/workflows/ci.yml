@@ -2,9 +2,9 @@ name: CI Cipher Module Tests
 
 on:
   push:
-    branches: ["main", "master", "lab2"]
+    branches: ["main", "master", "dev"]
   pull_request:
-    branches: ["main", "master", "lab2"]
+    branches: ["main", "master", "dev"]
 
 jobs:
   test:
@@ -14,7 +14,7 @@ jobs:
       - name: Repository letöltése
         uses: actions/checkout@v4
 
-      - name: Python 3.10 beállítása
+      - name: Python beállítása
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
@@ -24,14 +24,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytest cryptography
 
-      - name: 1MB-os tesztfájl generálása (test.jpg)
+      # ITT A LÉNYEG: A lab2 mappába lépünk, ha ott vannak a fájlok
+      - name: Tesztek és főprogram futtatása a lab2 mappában
         run: |
+          cd lab2
           head -c 1048576 /dev/urandom > test.jpg
-
-      - name: Pytest unit tesztek futtatása
-        run: |
           pytest -v
-
-      - name: Teljes 10 tesztesetes főprogram futtatása
-        run: |
           python tombtitkositok.py
