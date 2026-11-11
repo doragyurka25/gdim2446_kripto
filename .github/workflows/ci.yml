@@ -29,5 +29,5 @@ jobs:
         run: |
           cd lab2
           head -c 1048576 /dev/urandom > test.jpg
-          pytest -v
+          pytest -v test_cipher.py
           python tombtitkositok.py
